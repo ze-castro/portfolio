@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Nav from "../nav/Nav";
-
-//const time = new Date().getHours();
-
-//background1: "../assets/images/1.jpg"
-//background2: "../assets/images/2.jpg"
+import day from "../assets/images/day.jpg";
+import night from "../assets/images/night.jpg";
 
 function App() {
+  const time : number = new Date().getHours();
+  const [background, setBackground] = useState(night)
+
+  setInterval(() => {
+    if(time >= 7 && time <= 19){
+      setBackground(day)
+    } else {
+      setBackground(night)
+    }
+    console.log("time:", time, "\nbackground:", background)
+  }, 1000);
+
+  useEffect(() => {
+    document.body.style.backgroundImage = `url('${background}')` ;
+  });
+
   return (
     <div className="App">
       <Nav />

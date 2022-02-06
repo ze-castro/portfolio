@@ -127,6 +127,9 @@ input:focus {
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 code {

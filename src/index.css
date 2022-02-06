@@ -1,13 +1,134 @@
+@import "../src/fontface.css";
+:root {
+    font-size: medium;
+    --h1-size: calc(30px + 6 * ((100vw - 320px) / 680));
+    --h2-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    --h3-size: calc(10px + 6 * ((100vw - 320px) / 680));
+    --h4-size: calc(8px + 6 * ((100vw - 320px) / 680));
+    --p-size: calc(5px + 6 * ((100vw - 320px) / 680));
+    --input-size: calc(5px + 6 * ((100vw - 320px) / 680));
+    --button-size: calc(3px + 6 * ((100vw - 320px) / 680));
+    --a-size: calc(5px + 6 * ((100vw - 320px) / 680));
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    outline: none;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    user-select: none;
+    /*font*/
+    font-family: 'SFPro', sans-serif;
+}
+
+
+/* Font Sizes */
+
+p {
+    font-size: var(--p-size);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: var(--h1-size);
+    font-weight: 500;
+}
+
+h2 {
+    font-size: var(--h2-size);
+    font-weight: 500;
+}
+
+h3 {
+    font-size: var(--h3-size);
+    font-weight: 500;
+}
+
+h4 {
+    font-size: var(--h4-size);
+    font-weight: 500;
+}
+
+input {
+    font-size: var(--input-size);
+}
+
+button {
+    font-size: var(--button-size);
+}
+
+a {
+    font-size: var(--a-size);
+    font-weight: 400;
+}
+
+
+/* Link Defaults */
+
+a,
+a:visited {
+    text-decoration: none;
+    color: #06c;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Button Defaults */
+
+button {
+    width: 6vw;
+    aspect-ratio: 4/1;
+    border-radius: 2vh;
+    border: 0px solid transparent;
+    background-color: linear-gradient(to bottom, lightgray, darkgray);
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+    color: black;
+    transition-duration: 0.3s;
+}
+
+button:hover {
+    background-color: white;
+}
+
+button:active {
+    background-color: darkgray;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+}
+
+.accept {
+    background-color: rgb(0, 94, 172);
+    color: whitesmoke;
+}
+
+.accept:hover {
+    background-color: rgb(0, 120, 218);
+}
+
+
+/* Input Defauts */
+
+input {
+    aspect-ratio: 6/1;
+    border: 1px solid #d6d6d6;
+    border-radius: 0.4vh;
+    padding-left: 1vh;
+}
+
+input:focus {
+    border-color: #0070c9;
+    box-shadow: 0 0 0 0.2vh rgba(131, 192, 253, 0.50);
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

@@ -1,0 +1,88 @@
+footer {
+    width: auto;
+    height: 68px;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dock-container {
+    padding: 0 3px 3px 3px;
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background-color: rgba(83, 83, 83, 0.25);
+    backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dock-container .li-bin {
+    width: 57px;
+    margin: 0 2px 0 10px;
+    padding-left: 7px;
+    border-left: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.dock-container .li-1::after {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    content: "";
+    bottom: 2px;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    vertical-align: bottom;
+    transform-origin: 50% 100%;
+}
+
+li .name {
+    position: absolute;
+    top: -45px;
+    background: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.9);
+    height: 25px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    visibility: hidden;
+    font-size: calc(1px + 6 * ((100vw - 320px) / 680));
+}
+
+li .name::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid rgba(255, 255, 255, 0.5);
+}
+
+li:hover .name {
+    visibility: visible;
+}
+
+.ico {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: 0.2s;
+}

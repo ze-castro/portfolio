@@ -21,7 +21,7 @@ function Nav() {
                 <li><FontAwesomeIcon icon={faDesktop} /></li>
                 <li><FontAwesomeIcon icon={faTabletAlt} /></li>
                 <li><FontAwesomeIcon icon={faMobileAlt} /></li>
-                <li><Clock format={'ddd. DD/MM hh:mm:ss'} ticking={true} /></li>
+                <li><Clock format={'ddd. DD/MM HH:mm:ss'} ticking={true} /></li>
             </ul>
         </nav>
     );

@@ -4,6 +4,7 @@ import './App.css';
 import Nav from "../nav/Nav";
 import day from "../assets/images/day.jpg";
 import night from "../assets/images/night.jpg";
+import Dock from '../dock/Dock';
 
 function App() {
   const time : number = new Date().getHours();
@@ -12,10 +13,8 @@ function App() {
   setInterval(() => {
     if(time >= 7 && time <= 19){
       setBackground(day)
-    } else {
-      setBackground(night)
     }
-    console.log("time:", time, "\nbackground:", background)
+    //console.log("time:", time, "\nbackground:", background)
   }, 1000);
 
   useEffect(() => {
@@ -25,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <Dock />
     </div>
   );
 }

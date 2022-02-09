@@ -83,6 +83,10 @@ li:hover .name {
     visibility: visible;
 }
 
+.menu-bin:hover .name {
+    visibility: hidden;
+}
+
 .ico {
     width: 100%;
     aspect-ratio: 1/1;
@@ -104,8 +108,8 @@ li:hover .name {
 .menu-bin {
     position: absolute;
     transform: translate(-50%, -50%);
-    left: 50%;
-    top: -55px;
+    left: calc(50% + 97px);
+    top: -53px;
     width: 100px;
     display: flex;
     flex-direction: column;

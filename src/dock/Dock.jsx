@@ -8,6 +8,7 @@ function Dock() {
     const [ menuBin, setMenuBin ] = useState("hidden")
     const [ name, setName ] = useState("")
     const [ num, setNum ] = useState(0)
+    const [ src, setSrc] = useState(binFull)
 
     function emptyBin(){
         setMenuBin("visible")
@@ -18,9 +19,17 @@ function Dock() {
 
     function hoverRestore() {
         setMenuBin("hidden")
-        setName("visible")
+        setName("")
         setNum(num+1)
         console.log(num)
+    }
+
+    function fill(){
+        setSrc(binFull)
+    }
+
+    function empty(){
+        setSrc(bin)
     }
         
 
@@ -41,11 +50,11 @@ function Dock() {
                 </li>
                 <li className="li-bin" onClick={num % 2 === 0 ? emptyBin : hoverRestore}>
                     <div className="name" style={{visibility: name}}>Bin</div>
-                    <img className="ico" src={binFull} alt="bin" />
+                    <img className="ico" src={src} alt="bin" />
                     <div className="menu-bin" style={{visibility: menuBin}}>
-                        <p>Fill</p>
+                        <p onClick={fill}>Fill</p>
                         <hr />
-                        <p>Empty Bin</p>
+                        <p onClick={empty}>Empty Bin</p>
                     </div>
                 </li>
             </div>

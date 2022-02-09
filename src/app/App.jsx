@@ -7,17 +7,16 @@ import night from "../assets/images/night.jpg";
 import Dock from '../dock/Dock';
 
 function App() {
-  const time : number = new Date().getHours();
+  const time = new Date().getHours();
   const [background, setBackground] = useState(night)
 
-  setInterval(() => {
-    if(time >= 7 && time <= 19){
-      setBackground(day)
-    }
-    //console.log("time:", time, "\nbackground:", background)
-  }, 1000);
-
   useEffect(() => {
+    setInterval(() => {
+      if(time >= 7 && time <= 19){
+        setBackground(day)
+      }
+      //console.log("time:", time, "\nbackground:", background)
+    }, 1000);
     document.body.style.backgroundImage = `url('${background}')` ;
   });
 

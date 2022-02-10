@@ -2,6 +2,11 @@ import * as React from 'react';
 import "./Dock.css"
 import bin from "../assets/icons/bin.png"
 import binFull from "../assets/icons/bin-full.png"
+import mail from "../assets/icons/mail.png"
+import music from "../assets/icons/music.png"
+import photos from "../assets/icons/photos.png"
+import terminal from "../assets/icons/terminal.png"
+  
 import { useState } from "react";
 
 function Dock() {
@@ -9,19 +14,19 @@ function Dock() {
     const [ name, setName ] = useState("")
     const [ num, setNum ] = useState(0)
     const [ src, setSrc] = useState(binFull)
+    const [ open, setOpen] = useState("")
+    const [ bounce, setBounce] = useState("")
 
     function emptyBin(){
         setMenuBin("visible")
         setName("hidden")
         setNum(num+1)
-        console.log(num)
     }
 
     function hoverRestore() {
         setMenuBin("hidden")
         setName("")
         setNum(num+1)
-        console.log(num)
     }
 
     function fill(){
@@ -31,22 +36,32 @@ function Dock() {
     function empty(){
         setSrc(bin)
     }
-        
 
+    function clicked(){
+        let li1 = document.getElementsByClassName("li-1")[0]
+        let ico = document.getElementsByClassName("ico")[0]
+        li1.classList.add("opened")
+        ico.classList.add("bounce") 
+    }
+        
     return (  
         <footer className="Dock">
             <div className="dock-container">
-                <li className="li-1">
-                    <div className="name">Finder</div>
-                    <img className="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853981255cc36b3a37af_finder.png" alt="" />
+                <li className="li-1" onClick={clicked}>
+                    <div className="name">Mail</div>
+                    <img className="ico" src={mail} alt="" />
                 </li>
-                <li className="li-2">
-                    <div className="name">Siri</div>
-                    <img className="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853ff3bafbac60495771_siri.png" alt="" />
+                <li className="li-2" onClick={clicked}>
+                    <div className="name">Terminal</div>
+                    <img className="ico" src={terminal} alt="" />
                 </li>
-                <li className="li-3">
-                    <div className="name">LaunchPad</div>
-                    <img className="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853943597517f128b9b4_launchpad.png" alt="" />
+                <li className="li-3" onClick={clicked}>
+                    <div className="name">Music</div>
+                    <img className="ico" src={music} alt="" />
+                </li>
+                <li className="li-4" onClick={clicked}>
+                    <div className="name">Photos</div>
+                    <img className="ico" src={photos} alt="" />
                 </li>
                 <li className="li-bin" onClick={num % 2 === 0 ? emptyBin : hoverRestore}>
                     <div className="name" style={{visibility: name}}>Bin</div>

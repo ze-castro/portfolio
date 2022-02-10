@@ -29,7 +29,7 @@ footer {
     border-left: 1.5px solid rgba(255, 255, 255, 0.4);
 }
 
-.dock-container .li-1::after {
+.dock-container .opened::after {
     position: absolute;
     width: 4px;
     height: 4px;
@@ -83,10 +83,6 @@ li:hover .name {
     visibility: visible;
 }
 
-.menu-bin:hover .name {
-    visibility: hidden;
-}
-
 .ico {
     width: 100%;
     aspect-ratio: 1/1;
@@ -108,7 +104,7 @@ li:hover .name {
 .menu-bin {
     position: absolute;
     transform: translate(-50%, -50%);
-    left: calc(50% + 97px);
+    left: calc(50% + 121px);
     top: -53px;
     width: 100px;
     display: flex;
@@ -161,4 +157,22 @@ li:hover .name {
     height: 1px;
     border: none;
     background-color: rgba(70, 70, 70, 0.3);
+}
+
+
+/* icon jumping animation */
+
+.bounce {
+    animation: bounce 0.7s ease-in-out;
+    animation-iteration-count: 2;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-17px);
+    }
 }

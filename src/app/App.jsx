@@ -18,7 +18,7 @@ function App() {
       //console.log("time:", time, "\nbackground:", background)
     }, 1000);
     document.body.style.backgroundImage = `url('${background}')` ;
-  });
+  }, [background]);
 
   return (
     <div className="App">

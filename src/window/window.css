@@ -1,11 +1,6 @@
-.MusicApp {
-    width: 400px;
-    height: 600px;
+.Window {
     background-color: lightgray;
     position: absolute;
-    left: 55%;
-    top: 6%;
-    transform: translate(-50%, -50%);
     border-radius: 10px;
     filter: drop-shadow(0 0 7px rgba(0, 0, 0, 0.5));
     overflow: hidden;

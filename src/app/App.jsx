@@ -5,11 +5,13 @@ import Nav from "../nav/Nav";
 import day from "../assets/images/day.jpg";
 import night from "../assets/images/night.jpg";
 import Dock from '../dock/Dock';
+import MusicApp from '../music-app/music-app';
 
 function App() {
   const time = new Date().getHours();
   const [background, setBackground] = useState(night)
 
+  //change wallpaper by day time
   useEffect(() => {
     setInterval(() => {
       if(time >= 7 && time <= 19){
@@ -23,6 +25,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <MusicApp />
       <Dock />
     </div>
   );

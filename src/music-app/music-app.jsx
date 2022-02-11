@@ -1,6 +1,7 @@
 import React from 'react';
 import "./music-app.css"
 import Namebar from '../name-bar/name-bar';
+import Draggable from 'react-draggable';
 
 var songs = [
     {
@@ -21,9 +22,11 @@ var songs = [
 
 function MusicApp() {
     return (
-        <div className="MusicApp">
-            <Namebar name="Music - Listening to NF"/>
-        </div>
+        <Draggable bounds={'parent'} handle={'.handle'}>
+          <div className="MusicApp">
+              <Namebar name="Music"/>
+          </div>
+        </Draggable>
     );
 }
 

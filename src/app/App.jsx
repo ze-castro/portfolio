@@ -25,7 +25,9 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <MusicApp />
+      <div className="windows">
+        <MusicApp />
+      </div>
       <Dock />
     </div>
   );

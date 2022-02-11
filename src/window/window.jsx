@@ -3,11 +3,11 @@ import "./window.css"
 import Namebar from '../name-bar/name-bar';
 import Draggable from 'react-draggable';
 
-function Window({nameApp, rWidth, rHeight, rLeft, rTop}) {
+function Window({maximizeApp, minimizeApp, closeApp, nameApp, rWidth, rHeight, rDisplay}) {
     return (
         <Draggable bounds={'parent'} handle={'.handle'}>
-          <div className="Window" style={{width: rWidth, height: rHeight, left: rLeft, top: rTop}}>
-              <Namebar name={nameApp}/>
+          <div className="Window" style={{width: rWidth, height: rHeight, display: rDisplay}}>
+              <Namebar name={nameApp} maximize={maximizeApp} minimize={minimizeApp} close={closeApp}/>
           </div>
         </Draggable>
     );

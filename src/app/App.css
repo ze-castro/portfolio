@@ -15,8 +15,8 @@ body {
 
 .windows {
     margin-top: 30px;
-    width: 200%;
-    height: 200%;
+    width: 100%;
+    height: calc(100vh - 103px);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);

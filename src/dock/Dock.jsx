@@ -9,7 +9,7 @@ import terminal from "../assets/icons/terminal.png"
   
 import { useState } from "react";
 
-function Dock() {
+function Dock({mailOpened, terminalOpened, musicOpened, photosOpened, openMail, openMusic, openTerminal, openPhotos}) {
     const [ menuBin, setMenuBin ] = useState("hidden")
     const [ name, setName ] = useState("")
     const [ num, setNum ] = useState(0)
@@ -52,19 +52,19 @@ function Dock() {
     return (  
         <footer className="Dock">
             <div className="dock-container">
-                <li className="li-1 shortcut" onClick={()=>{clicked(0)}}>
+                <li className={mailOpened, "li-1", "shortcut"} onClick={()=>{clicked(0)}} onClickCapture={openMail}>
                     <div className="name">Mail</div>
                     <img className="ico" src={mail} alt="" />
                 </li>
-                <li className="li-2 shortcut" onClick={()=>{clicked(1)}}>
+                <li className={terminalOpened, "li-2", "shortcut"} onClick={()=>{clicked(1)}} onClickCapture={openTerminal}>
                     <div className="name">Terminal</div>
                     <img className="ico" src={terminal} alt="" />
                 </li>
-                <li className="li-3 shortcut" onClick={()=>{clicked(2)}}>
+                <li className={musicOpened, "li-3", "shortcut"} onClick={()=>{clicked(2)}} onClickCapture={openMusic}>
                     <div className="name">Music</div>
                     <img className="ico" src={music} alt="" />
                 </li>
-                <li className="li-4 shortcut" onClick={()=>{clicked(3)}}>
+                <li className={photosOpened, "li-4", "shortcut"} onClick={()=>{clicked(3)}} onClickCapture={openPhotos}>
                     <div className="name">Photos</div>
                     <img className="ico" src={photos} alt="" />
                 </li>

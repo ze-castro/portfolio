@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Mac OS Portfolio App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made to show my web dev skills. It also serves the porpose of showing my other projects.
 
 ## Available Scripts
 

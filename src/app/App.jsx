@@ -23,10 +23,19 @@ function App() {
   }, [background])
 
   //maximize, minimize and close windows
-  const [count, setCount] = useState(0)
+  const [count0, setCount0] = useState(0)
+  const [count1, setCount1] = useState(0)
+  const [count2, setCount2] = useState(0)
+  const [count3, setCount3] = useState(0)
 
-  const [width, setWidth] = useState('800px')
-  const [height, setHeight] = useState('600px')
+  const [widthMail, setWidthMail] = useState('800px')
+  const [heightMail, setHeightMail] = useState('600px')
+  const [widthTerminal, setWidthTerminal] = useState('800px')
+  const [heightTerminal, setHeightTerminal] = useState('600px')
+  const [widthMusic, setWidthMusic] = useState('800px')
+  const [heightMusic, setHeightMusic] = useState('600px')
+  const [widthPhotos, setWidthPhotos] = useState('800px')
+  const [heightPhotos, setHeightPhotos] = useState('600px')
 
   const [displayMail, setDisplayMail] = useState('none')
   const [displayTerminal, setDisplayTerminal] = useState('none')
@@ -38,15 +47,53 @@ function App() {
   const [musicOpened, setMusicOpened] = useState('')
   const [photosOpened, setPhotosOpened] = useState('')
 
-  function maximize() {
-    setCount(count+1)
-    if(count % 2 == 0){
-      setWidth('100vw')
-      setHeight('calc(100vh - 103px)')
-      return ;
-    } 
-    setWidth('')
-    setHeight('')
+  function maximize(num) {
+    let width = '100vw'
+    let height = 'calc(100vh - 104px)'
+    switch (num) {
+      case 0:
+        setCount0(count0+1)
+        if(count0 % 2 === 0){
+          setWidthMail(width)
+          setHeightMail(height)
+          return ;
+        }
+        setWidthMail('')
+        setHeightMail('')
+        break;
+      case 1:
+        setCount1(count1+1)
+        if(count1 % 2 === 0){
+          setWidthTerminal(width)
+          setHeightTerminal(height)
+          return ;
+        }
+        setWidthTerminal('')
+        setHeightTerminal('')
+        break;
+      case 2:
+        setCount2(count2+1)
+        if(count2 % 2 === 0){
+          setWidthMusic(width)
+          setHeightMusic(height)
+          return ;
+        }
+        setWidthMusic('')
+        setHeightMusic('')
+        break;
+      case 3:
+        setCount3(count3+1)
+        if(count3 % 2 === 0){
+          setWidthPhotos(width)
+          setHeightPhotos(height)
+          return ;
+        }
+        setWidthPhotos('')
+        setHeightPhotos('')
+        break;
+      default:
+        break;
+    }
   }
 
   function minimize(num) {
@@ -118,10 +165,10 @@ function App() {
     <div className="App">
       <Nav />
       <div className="windows">
-        <Window className="window" maximizeApp={maximize} minimizeApp={()=>minimize(0)} closeApp={()=>close(0)} nameApp={'Mail'} rWidth={width} rHeight={height} rDisplay={displayMail}/>
-        <Window className="window" maximizeApp={maximize} minimizeApp={()=>minimize(1)} closeApp={()=>close(1)} nameApp={'Terminal'} rWidth={width} rHeight={height} rDisplay={displayTerminal}/>
-        <Window className="window" maximizeApp={maximize} minimizeApp={()=>minimize(2)} closeApp={()=>close(2)} nameApp={'Music'} rWidth={width} rHeight={height} rDisplay={displayMusic}/>
-        <Window className="window" maximizeApp={maximize} minimizeApp={()=>minimize(3)} closeApp={()=>close(3)} nameApp={'Photos'} rWidth={width} rHeight={height} rDisplay={displayPhotos}/>
+        <Window className="window" maximizeApp={()=>maximize(0)} minimizeApp={()=>minimize(0)} closeApp={()=>close(0)} nameApp={'Mail'} rWidth={widthMail} rHeight={heightMail} rDisplay={displayMail}/>
+        <Window className="window" maximizeApp={()=>maximize(1)} minimizeApp={()=>minimize(1)} closeApp={()=>close(1)} nameApp={'Terminal'} rWidth={widthTerminal} rHeight={heightTerminal} rDisplay={displayTerminal}/>
+        <Window className="window" maximizeApp={()=>maximize(2)} minimizeApp={()=>minimize(2)} closeApp={()=>close(2)} nameApp={'Music'} rWidth={widthMusic} rHeight={heightMusic} rDisplay={displayMusic}/>
+        <Window className="window" maximizeApp={()=>maximize(3)} minimizeApp={()=>minimize(3)} closeApp={()=>close(3)} nameApp={'Photos'} rWidth={widthPhotos} rHeight={heightPhotos} rDisplay={displayPhotos}/>
       </div>
       <Dock openMail={()=>open(0)} mailOpened={mailOpened} openTerminal={()=>open(1)} terminalOpened={terminalOpened} openMusic={()=>open(2)} musicOpened={musicOpened} openPhotos={()=>open(3)} photosOpened={photosOpened}/>
     </div>

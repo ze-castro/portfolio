@@ -1,6 +1,6 @@
-# Mac OS Portfolio App
+# Mac OS Desktop
 
-This project was made to show my web dev skills. It also serves the porpose of showing my other projects.
+This project was made to improve my react skills.
 
 ## Available Scripts
 

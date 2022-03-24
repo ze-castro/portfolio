@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./name-bar.css"
 
 function Namebar({name, maximize, minimize, close}) {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./window.css"
 import Namebar from '../name-bar/name-bar';
 import Draggable from 'react-draggable';
